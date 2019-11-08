@@ -28,7 +28,7 @@ inputs = {
   )
 
   common_name = "*.domain.name"
-  domain_name = "domain.name"
+  hosted_zone_id = "zone_id"
   validation_method = "DNS"
   subject_alternative_names = []
   default_ttl = 60

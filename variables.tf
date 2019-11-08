@@ -23,8 +23,8 @@ variable "common_name" {
   description = "A domain name for which the certificate should be issued"
 }
 
-variable "domain_name" {
-  description = "A domain name for which the certificate should be issued"
+variable "hosted_zone_id" {
+  description = "A zone_id for which the certificate should be issued"
 }
 
 variable "subject_alternative_names" {

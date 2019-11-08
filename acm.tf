@@ -15,15 +15,11 @@ resource "aws_acm_certificate" "cert" {
   }
 }
 
-data "aws_route53_zone" "zone" {
-  name = var.domain_name
-}
-
 resource "aws_route53_record" "cert_validation" {
   count   = var.existing_validation ? 0 : 1
   name    = aws_acm_certificate.cert.domain_validation_options.0.resource_record_name
   type    = aws_acm_certificate.cert.domain_validation_options.0.resource_record_type
-  zone_id = data.aws_route53_zone.zone.id
+  zone_id = var.hosted_zone_id
   records = [aws_acm_certificate.cert.domain_validation_options.0.resource_record_value]
   ttl     = var.default_ttl
 }
