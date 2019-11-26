@@ -29,7 +29,7 @@ variable "hosted_zone_id" {
 
 variable "subject_alternative_names" {
   description = "A list of domains that should be SANs in the issued certificate"
-  type        = "list"
+  type        = list
 }
 
 variable "default_ttl" {
